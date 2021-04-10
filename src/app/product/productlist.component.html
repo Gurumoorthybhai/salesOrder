@@ -1,0 +1,45 @@
+<div>
+  <h2 style="margin: auto; width: 190px">Product Details</h2>
+  <button
+    class="btn btn-success"
+    style="margin-left: 600px"
+    (click)="addProduct()"
+  >
+    Add Product
+  </button>
+  <div class="tableStyle">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Product Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Product of Products">
+          <td>{{ Product.productId }}</td>
+          <td>{{ Product.productName }}</td>
+          <td>{{ Product.productCost }}</td>
+          <td>
+            <button
+              class="btn btn-success"
+              (click)="editProduct(Product.productId)"
+              style="margin-left: 20px"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-success"
+              style="margin-left: 20px"
+              (click)="deleteProduct(Product.productId)"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

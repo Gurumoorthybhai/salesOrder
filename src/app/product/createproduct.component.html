@@ -1,0 +1,51 @@
+<div class="formlayout">
+  <p>Product Details</p>
+  <form [formGroup]="productform">
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Product Name</mat-label>
+        <input
+          matInput
+          placeholder="productName"
+          formControlName="productName"
+          id="productName"
+          name="productName"
+          required
+        />
+        <mat-error *ngIf="productform.controls['productName'].touched"
+          >productName is required</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Product Cost</mat-label>
+        <input
+          matInput
+          placeholder="Product Cost"
+          formControlName="productCost"
+          id="productcost"
+          name="productcost"
+          required
+        />
+        <mat-error *ngIf="productform.controls['productCost'].touched"
+          >ProductName is required</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <button
+      *ngIf="savebtn"
+      class="btn btn-success btn-style"
+      (click)="saveProductDetails(productform.value)"
+    >
+      Save
+    </button>
+    <button
+      *ngIf="!savebtn"
+      class="btn btn-success btn-style"
+      (click)="updateProductDetails(productform.value)"
+    >
+      Update
+    </button>
+  </form>
+</div>

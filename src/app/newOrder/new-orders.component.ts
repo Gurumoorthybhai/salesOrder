@@ -42,7 +42,7 @@ export class NewOrdersComponent implements OnInit {
   }
 
   getProductDetails() {
-    this.productService.loadData().subscribe(
+    this.productService.getProductDetails().subscribe(
       (data) => {
         if (data) {
           this.Products = data;

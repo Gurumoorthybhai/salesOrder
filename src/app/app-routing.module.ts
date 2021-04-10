@@ -2,7 +2,6 @@ import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 import { CartComponent } from './cart/cart.component';
 import { NewOrdersComponent } from './newOrder/new-orders.component';
-import { CreateEditorderlistComponent } from './order/create-editorderlist.component';
 import { OrderlistComponent } from './order/orderlist.component';
 import { CreateEditoutletComponent } from './outlet/create-editoutlet.component';
 import { OutletlistComponent } from './outlet/outletlist.component';
@@ -54,14 +53,6 @@ const routes: Routes = [
   {
     path: 'orderlist',
     component: OrderlistComponent,
-  },
-  {
-    path: 'createOrder',
-    component: CreateEditorderlistComponent,
-  },
-  {
-    path: 'editOrder/:id',
-    component: CreateEditorderlistComponent,
   },
   {
     path: 'newOrder/:id',

@@ -1,0 +1,62 @@
+<div>
+  <h2 style="margin: auto; width: 190px">Outlet Details</h2>
+  <button
+    class="btn btn-success"
+    style="margin-left: 600px"
+    (click)="addOutlet()"
+  >
+    Add Outlet
+  </button>
+  <div class="tableStyle">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Outlet Name</th>
+          <th>Phone Number</th>
+          <th>Address</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Outlet of Outlets">
+          <td>{{ Outlet.outletId }}</td>
+          <td>{{ Outlet.outletName }}</td>
+          <td>{{ Outlet.outletPhoneNo }}</td>
+          <td>{{ Outlet.outletAddress }}</td>
+
+          <td>
+            <button
+              class="btn btn-success"
+              (click)="editOutlet(Outlet.outletId)"
+              style="margin-left: 20px"
+            >
+              Edit
+            </button>
+            <button
+              class="btn btn-success"
+              style="margin-left: 20px"
+              (click)="deleteOutlet(Outlet.outletId)"
+            >
+              Delete
+            </button>
+            <button
+              class="btn btn-secondary"
+              style="margin-left: 20px"
+              (click)="newOrder(Outlet.outletId)"
+            >
+              New Order
+            </button>
+            <button
+              class="btn btn-success"
+              (click)="cartList(Outlet.outletId)"
+              style="margin-left: 20px"
+            >
+              <i class="material-icons">shopping_cart</i><span>Cart</span>
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

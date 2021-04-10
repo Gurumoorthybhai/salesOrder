@@ -1,0 +1,70 @@
+<div class="formlayout">
+  <p>Outlet Details</p>
+  <form [formGroup]="outletform">
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Outlet Name</mat-label>
+        <input
+          matInput
+          placeholder="outletName"
+          formControlName="outletName"
+          id="outletName"
+          name="outletName"
+          required
+        />
+        <mat-error *ngIf="outletform.controls['outletName'].touched"
+          >outletName is required</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Phone No</mat-label>
+        <input
+          matInput
+          type="tel"
+          placeholder="Phone No"
+          formControlName="outletPhoneNo"
+          id="outletPhoneNo"
+          name="outletPhoneNo"
+          required
+        />
+        <mat-error *ngIf="outletform.controls['outletPhoneNo'].touched"
+          >outletPhoneNo is required</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Address</mat-label>
+        <textarea
+          style="min-height: 100px; height: 100%; width: 100%"
+          matInput
+          placeholder="Address"
+          formControlName="outletAddress"
+          id="outletAddress"
+          name="outletAddress"
+          required
+        ></textarea>
+
+        <mat-error *ngIf="outletform.controls['outletAddress'].touched"
+          >outletAddress is required</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <button
+      *ngIf="savebtn"
+      class="btn btn-success btn-style"
+      (click)="saveOutletDetails(outletform.value)"
+    >
+      Save
+    </button>
+    <button
+      *ngIf="!savebtn"
+      class="btn btn-success btn-style"
+      (click)="updateOutletDetails(outletform.value)"
+    >
+      Update
+    </button>
+  </form>
+</div>

@@ -1,0 +1,81 @@
+<!-- <mat-form-field appearance="fill">
+  <mat-label>Choose a date</mat-label>
+  <input matInput [matDatepicker]="picker" />
+  <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+  <mat-datepicker #picker></mat-datepicker>
+</mat-form-field>
+ -->
+<div style="margin-left: 400px">
+  <h2 style="margin-left: 100px">Outlet Report Details</h2>
+  <p>
+    <mat-form-field>
+      <mat-label>Enter a start date</mat-label>
+
+      <input
+        matInput
+        [matDatepicker]="datepicker"
+        required
+        placeholder="Choose a date"
+        (dateChange)="valueChanged($event)"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="datepicker"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #datepicker disabled="false"></mat-datepicker>
+    </mat-form-field>
+
+    <mat-form-field style="margin-left: 60px">
+      <mat-label>Enter a End date</mat-label>
+
+      <input
+        matInput
+        [matDatepicker]="datepicker1"
+        required
+        placeholder="Choose a date"
+        (dateChange)="endDate($event)"
+      />
+      <mat-datepicker-toggle
+        matSuffix
+        [for]="datepicker1"
+      ></mat-datepicker-toggle>
+      <mat-datepicker #datepicker1 disabled="false"></mat-datepicker>
+    </mat-form-field>
+
+    <button
+      class="btn btn-success"
+      style="margin-left: 20px"
+      (click)="filter()"
+    >
+      Search
+    </button>
+  </p>
+</div>
+<div>
+  <div class="tableStyle">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>Id</th>
+          <th>Outlet Name</th>
+          <th>Outlet Address</th>
+          <th>Product Count</th>
+
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Order of Orders; let i = index">
+          <td>{{ i + 1 }}</td>
+          <td>{{ Order.outletName }}</td>
+
+          <td>{{ Order.outletAddress }}</td>
+          <td>{{ Order.productcount }}</td>
+          <td>{{ Order.quantity }}</td>
+          <td>{{ Order.total }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

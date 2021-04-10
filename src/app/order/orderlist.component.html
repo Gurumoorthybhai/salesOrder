@@ -1,0 +1,36 @@
+<div>
+  <h2 style="margin: auto; width: 190px">Sales Order Details</h2>
+
+  <div class="tableStyle">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>User Name</th>
+          <th>Phone No</th>
+          <th>Reporting Manager</th>
+          <th>Product Name</th>
+          <th>Phone Cost</th>
+          <th>Outlet Name</th>
+          <th>Outlet PhoneNo</th>
+          <th>Outlet Address</th>
+          <th>Quantity</th>
+          <th>Total</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Order of Orders">
+          <td>{{ Order.username }}</td>
+          <td>{{ Order.phoneNo }}</td>
+          <td>{{ Order.reportingManager }}</td>
+          <td>{{ Order.productName }}</td>
+          <td>{{ Order.productCost }}</td>
+          <td>{{ Order.outletName }}</td>
+          <td>{{ Order.outletPhoneNo }}</td>
+          <td>{{ Order.outletAddress }}</td>
+          <td>{{ Order.quantity }}</td>
+          <td>{{ Order.total }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

@@ -1,0 +1,67 @@
+<div class="formlayout">
+  <p>User Details</p>
+  <form [formGroup]="userform">
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>User Name</mat-label>
+        <input
+          matInput
+          placeholder="UserName"
+          formControlName="username"
+          id="UserName"
+          name="UserName"
+          required
+        />
+        <mat-error *ngIf="userform.controls['username'].touched"
+          >UserName is required</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Phone Number</mat-label>
+        <input
+          matInput
+          placeholder="phoneNo"
+          formControlName="phoneNo"
+          id="phoneNo"
+          name="phoneNo"
+          required
+        />
+        <mat-error *ngIf="userform.controls['phoneNo'].touched"
+          >UserName is required</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <p>
+      <mat-form-field appearance="fill">
+        <mat-label>Reporting Manager</mat-label>
+        <input
+          matInput
+          placeholder="reportingManager"
+          formControlName="reportingManager"
+          id="reportingManager"
+          name="reportingManager"
+          required
+        />
+        <mat-error *ngIf="userform.controls['reportingManager'].touched"
+          >Reporting Manager is required</mat-error
+        >
+      </mat-form-field>
+    </p>
+    <button
+      *ngIf="savebtn"
+      class="btn btn-success btn-style"
+      (click)="saveUserDetails(userform.value)"
+    >
+      Save
+    </button>
+    <button
+      *ngIf="!savebtn"
+      class="btn btn-success btn-style"
+      (click)="updateUserDetails(userform.value)"
+    >
+      Update
+    </button>
+  </form>
+</div>

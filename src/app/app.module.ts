@@ -14,7 +14,6 @@ import { CreateproductComponent } from './product/createproduct.component';
 import { OutletlistComponent } from './outlet/outletlist.component';
 import { CreateEditoutletComponent } from './outlet/create-editoutlet.component';
 import { OrderlistComponent } from './order/orderlist.component';
-import { CreateEditorderlistComponent } from './order/create-editorderlist.component';
 import { NewOrdersComponent } from './newOrder/new-orders.component';
 import { CartComponent } from './cart/cart.component';
 import { ReportDetailsComponent } from './report-details/report-details.component';
@@ -31,7 +30,6 @@ import { OutletReportComponent } from './report-details/outlet-report.component'
     OutletlistComponent,
     CreateEditoutletComponent,
     OrderlistComponent,
-    CreateEditorderlistComponent,
     NewOrdersComponent,
     CartComponent,
     ReportDetailsComponent,
