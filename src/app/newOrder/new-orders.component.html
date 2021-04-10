@@ -1,0 +1,44 @@
+<div>
+  <h2 style="margin: auto; width: 190px">Order Details</h2>
+
+  <div class="tableStyle">
+    <table class="table table-bordered">
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Product Name</th>
+          <th>Phone Cost</th>
+          <th></th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr *ngFor="let Product of Products; let index = index">
+          <td>{{ Product.productId }}</td>
+          <td>{{ Product.productName }}</td>
+          <td>{{ Product.productCost }}</td>
+          <td>
+            <mat-form-field appearance="fill">
+              <mat-label>Quantity</mat-label>
+              <mat-select [(ngModel)]="selectedValue">
+                <mat-option
+                  style="font-style: 10px"
+                  *ngFor="let quantity of quantities"
+                  [value]="quantity.count"
+                >
+                  {{ quantity.count }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+            <button
+              class="btn btn-success"
+              style="margin-left: 20px"
+              (click)="newOrders(Product)"
+            >
+              Add to Cart
+            </button>
+          </td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>

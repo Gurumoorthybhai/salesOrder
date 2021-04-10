@@ -15,6 +15,11 @@ import { OutletlistComponent } from './outlet/outletlist.component';
 import { CreateEditoutletComponent } from './outlet/create-editoutlet.component';
 import { OrderlistComponent } from './order/orderlist.component';
 import { CreateEditorderlistComponent } from './order/create-editorderlist.component';
+import { NewOrdersComponent } from './newOrder/new-orders.component';
+import { CartComponent } from './cart/cart.component';
+import { ReportDetailsComponent } from './report-details/report-details.component';
+import { UserReportComponent } from './report-details/user-report.component';
+import { OutletReportComponent } from './report-details/outlet-report.component';
 
 @NgModule({
   declarations: [
@@ -27,6 +32,11 @@ import { CreateEditorderlistComponent } from './order/create-editorderlist.compo
     CreateEditoutletComponent,
     OrderlistComponent,
     CreateEditorderlistComponent,
+    NewOrdersComponent,
+    CartComponent,
+    ReportDetailsComponent,
+    UserReportComponent,
+    OutletReportComponent,
   ],
   imports: [
     BrowserModule,
